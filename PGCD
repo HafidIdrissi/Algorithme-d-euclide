@@ -1,0 +1,12 @@
+def pgcd(a,b): 
+    i=(a%b)
+    while a!=i:
+        d=(a//b)
+        i=(a%b)
+        a=b*d+i
+        if i == 0 :
+            print("pgcd est",b)
+            break
+        a=b
+        b=i
+pgcd(368,117)
