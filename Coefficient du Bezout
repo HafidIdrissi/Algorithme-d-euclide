@@ -1,3 +1,14 @@
+def pgcd(a,b): 
+    i=(a%b)
+    while a!=i:
+        d=(a//b)
+        i=(a%b)
+        a=b*d+i
+        if i == 0 :
+            print("pgcd est",b)
+            break
+        a=b
+        b=i
 def bezout(a, b):
     u1 = 1
     u2 = 0
@@ -5,7 +16,9 @@ def bezout(a, b):
     v2 = 1
     r2 = b
     r = a
-    while r2:
+    while r2: # je l'ai decouvrir par hasard que si on met la boucle while sans condition la boucle s'incremente jusqu'a que la variable qui est interieur dans la boucle est nul
         q = r // r2
-        r ,u1 , v1 , r2 ,u2 , v2= r2 , u2 , v2, r - r2 * q , u1 - u2 * q , v1 - v2 * q
-    return u1, v1
+        r ,u1 , v1 , r2 ,u2 , v2= r2 , u2 , v2, r - r2 * q , u1 - u2 * q , v1 - v2 * q   
+    return "Bezout(",a,",",b ,")","#PGCD:",r,"(u","=",u1,")","*",a,"+","(v","=",v1,")","*",b,"=",a
+pgcd(40,72)
+bezout(40,72)
